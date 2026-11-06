@@ -32,7 +32,7 @@ ifeq ($(CONFIG_LIBDAV1D),yes)
   LOCAL_STATIC_LIBRARIES += libdav1d
 endif
 
-ifneq ($(ARCH_ARM_HAVE_NEON),)
+ifneq ($(filter $(TARGET_ARCH),arm arm64),)
   LOCAL_SRC_FILES += neon/mpegvideo.c
 endif
 
@@ -61,7 +61,7 @@ ifeq ($(CONFIG_LIBDAV1D),yes)
   LOCAL_STATIC_LIBRARIES += libdav1d
 endif
 
-ifneq ($(ARCH_ARM_HAVE_NEON),)
+ifneq ($(filter $(TARGET_ARCH),arm arm64),)
   LOCAL_SRC_FILES += neon/mpegvideo.c
 endif
 
